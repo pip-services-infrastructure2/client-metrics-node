@@ -1,0 +1,1 @@
+export { MetricsClientFactory } from './MetricsClientFactory';
