@@ -4,7 +4,7 @@ import { References } from 'pip-services3-commons-nodex';
 
 import { MetricsMemoryPersistence } from 'service-metrics-node';
 import { MetricsController } from 'service-metrics-node';
-import { MetricsHttpServiceV1 } from 'service-metrics-node';
+import { MetricsCommandableHttpServiceV1 } from 'service-metrics-node';
 
 import { MetricsHttpClientV1 } from '../../../src/version1/MetricsHttpClientV1';
 import { MetricsClientV1Fixture } from './MetricsClientV1Fixture';
@@ -12,7 +12,7 @@ import { MetricsClientV1Fixture } from './MetricsClientV1Fixture';
 suite('MetricsHttpClientV1', () => {
     let persistence: MetricsMemoryPersistence;
     let controller: MetricsController;
-    let service: MetricsHttpServiceV1;
+    let service: MetricsCommandableHttpServiceV1;
     let client: MetricsHttpClientV1;
     let fixture: MetricsClientV1Fixture;
 
@@ -29,7 +29,7 @@ suite('MetricsHttpClientV1', () => {
             'connection.host', 'localhost'
         );
 
-        service = new MetricsHttpServiceV1();
+        service = new MetricsCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         client = new MetricsHttpClientV1();
